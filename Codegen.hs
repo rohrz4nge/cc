@@ -1,7 +1,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE GeneralizedNewtypeDeriving #-}
 
-module CodeGen where
+module Codegen where
 
 import TypeChecker
 import AbsCPP as ABS
@@ -270,19 +270,19 @@ unnamedInstr ins = do
   modifyBlock (blk { stack = (L.Do ins) : i})
 
 instr_i :: L.Instruction -> Codegen L.Operand
-instr_i instruct = instr CodeGen.int instruct
+instr_i instruct = instr Codegen.int instruct
 
 
 instr_d :: L.Instruction -> Codegen L.Operand
-instr_d instruct = instr CodeGen.double instruct
+instr_d instruct = instr Codegen.double instruct
 
 
 instr_v :: L.Instruction -> Codegen L.Operand
-instr_v instruct = instr CodeGen.void instruct
+instr_v instruct = instr Codegen.void instruct
 
 
 instr_b :: L.Instruction -> Codegen L.Operand
-instr_b instruct = instr CodeGen.bool instruct
+instr_b instruct = instr Codegen.bool instruct
 
 
 terminator :: L.Named L.Terminator -> Codegen (L.Named L.Terminator)

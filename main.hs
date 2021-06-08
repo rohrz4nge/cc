@@ -6,7 +6,7 @@ import LexCPP
 import ParCPP
 import ErrM
 import TypeChecker
-import CodeGen
+import Codegen
 import Auss
 import qualified LLVM.AST as L
 

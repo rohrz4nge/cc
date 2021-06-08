@@ -1,6 +1,6 @@
 module Auss where
 
-import CodeGen
+import Codegen
 import qualified AbsCPP as ABS
 import TypeChecker
 import Control.Monad.State as CMS
@@ -47,10 +47,10 @@ standardValue ABS.Type_double  = Just doubleConsZero
 standardValue ABS.Type_void    = Nothing
 
 typeconversion :: ABS.Type -> L.Type
-typeconversion ABS.Type_void            = CodeGen.void
-typeconversion ABS.Type_bool            = CodeGen.bool
-typeconversion ABS.Type_int             = CodeGen.int
-typeconversion ABS.Type_double          = CodeGen.double
+typeconversion ABS.Type_void            = Codegen.void
+typeconversion ABS.Type_bool            = Codegen.bool
+typeconversion ABS.Type_int             = Codegen.int
+typeconversion ABS.Type_double          = Codegen.double
 typeconversion (ABS.TypeId (ABS.Id id)) = L.NamedTypeReference (name' id)
 
 
